@@ -9,3 +9,16 @@ Before the announcement of AWS CloudShell at re:Invent 2020, we had Instance Con
 AWS Using CloudShell, you can securely manage, explore, and interact with your AWS resources from a browser. When you log into your console, CloudShell authenticates you, So you don't need to worry about Access Key / Secret Key. CloudShell can be accessed directly from your browser and is free of charge.
 
 https://dev.to/aws-builders/how-to-install-terraform-on-aws-cloudshell-5had
+
+State File in Terraform
+The state file in Terraform keeps track of the infrastructure it has created. It is a highly crucial element to update and destroy the existing infrastructure.
+
+As the state file stores the complete details of the infrastructure, it also may store sensitive information like secrets, passwords, API tokens, and much more. And this is how the terraform.tfstate file becomes a critical and sensitive file to handle.
+
+Let us get to know more about this through a scenario:
+
+Consider there is a DevOps team of 5. The Terraform project is maintained with a GitHub repository. Now to update the infrastructure it is necessary to access the state file. But we can’t keep the file exposed in the repository. In such a production and collaborative environment the state file has to be shared, maintained, and accessed safely by the developers.
+
+To overcome these issues we use Terraform Remote Backend.
+
+https://blog.devops.dev/optimizing-your-devops-operations-with-terraform-remote-backends-2abb52cc552d
